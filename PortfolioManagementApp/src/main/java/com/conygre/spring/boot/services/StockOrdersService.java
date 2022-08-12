@@ -4,7 +4,7 @@ import com.conygre.spring.boot.entities.StockOrder;
 
 public interface StockOrdersService {
     // add an order
-    void addNewStockOrder(StockOrder stockOrder);
+    StockOrder addNewStockOrder(StockOrder stockOrder);
     // get all orders
     Iterable<StockOrder> getAllOrders();
     // delete order by id

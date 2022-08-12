@@ -19,18 +19,20 @@ public class StockOrdersServiceImpl implements StockOrdersService {
     }
 
     @Override
-    public void addNewStockOrder(StockOrder stockOrder) {
-
+    public StockOrder addNewStockOrder(StockOrder stockOrder) {
+        stockOrder.setOrderID(0);
+        return dao.save(stockOrder);
     }
 
     @Override
     public void deleteStockOrder(int id) {
-
+        StockOrder toBeDeleted = dao.findById(id).get();
+        dao.delete(toBeDeleted);
     }
 
     @Override
     public void deleteAllStockOrders() {
-
+        dao.deleteAll();
     }
 
     @Override
