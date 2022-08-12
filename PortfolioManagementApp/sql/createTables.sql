@@ -1,18 +1,18 @@
 CREATE DATABASE IF NOT EXISTS tradePortfolio;
 use tradePortfolio;
-create table users (emailAddress varchar(50) primary key,userName varchar(50),funds double);
+create table users (email_address varchar(50) primary key,user_name varchar(50),funds double);
 
-CREATE TABLE stocks (stockSymbol varchar(50) primary key, stockName varchar(50),
-                    stockPrice double             
+CREATE TABLE stocks (stock_symbol varchar(50) primary key, stock_name varchar(50),
+                    stock_price double
 );
 
-CREATE TABLE stockOrders (orderID int primary key auto_increment,
-		            orderStatus varchar(50) not null,
-                    numOfShares int,
-                    stockSymbol varchar(50),
-                    userEmail varchar(50),
-                    FOREIGN KEY (stockSymbol) REFERENCES stocks(stockSymbol),
-                    FOREIGN KEY (userEmail) REFERENCES users(emailAddress)
+CREATE TABLE stock_orders (order_id int primary key auto_increment,
+		            order_status varchar(50) not null,
+                    num_of_shares int,
+                    stock_symbol varchar(50),
+                    user_email varchar(50),
+                    FOREIGN KEY (stock_symbol) REFERENCES stocks(stock_symbol),
+                    FOREIGN KEY (user_email) REFERENCES users(email_address)
 
 );
 
@@ -28,7 +28,7 @@ insert into stocks values ('MSFT', 'microsoft', 157.14);
 
 
 
-insert into stockOrders values (1, 'initial state', 1, 'AAPL', 'abc@gmail.com');
-insert into stockOrders values (2, 'processing', 3, 'AAPL', 'abc@gmail.com');
-insert into stockOrders values (3, 'success', 2, 'AAPL', 'abc@gmail.com');
-insert into stockOrders values (4, 'success', 1, 'MSFT', 'abc@gmail.com');
+insert into stock_orders values (1, 'initial state', 1, 'AAPL', 'abc@gmail.com');
+insert into stock_orders values (2, 'processing', 3, 'AAPL', 'abc@gmail.com');
+insert into stock_orders values (3, 'success', 2, 'AAPL', 'abc@gmail.com');
+insert into stock_orders values (4, 'success', 1, 'MSFT', 'abc@gmail.com');
