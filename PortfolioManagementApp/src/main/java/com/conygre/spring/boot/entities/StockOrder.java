@@ -13,14 +13,14 @@ public class StockOrder implements Serializable {
     @Column(name="order_id")
     private int orderID;
 
-    @Column(name="order_status") private String orderStatus;
+    @Column(name="order_status") private Integer orderStatus;
     @Column(name="num_of_shares") private Integer numOfShares;
     @Column(name="stock_symbol") private String stockSymbol;
     @Column(name="user_email") private String userEmail;
 
     public StockOrder(){}
 
-    public StockOrder(int orderID, String orderStatus, Integer numOfShares, String stockSymbol, String userEmail) {
+    public StockOrder(int orderID, Integer orderStatus, Integer numOfShares, String stockSymbol, String userEmail) {
         this.orderID = orderID;
         this.orderStatus = orderStatus;
         this.numOfShares = numOfShares;
@@ -36,11 +36,11 @@ public class StockOrder implements Serializable {
         this.orderID = orderID;
     }
 
-    public String getOrderStatus() {
+    public Integer getOrderStatus() {
         return orderStatus;
     }
 
-    public void setOrderStatus(String orderStatus) {
+    public void setOrderStatus(Integer orderStatus) {
         this.orderStatus = orderStatus;
     }
 

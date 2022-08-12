@@ -19,4 +19,5 @@ public class StockOrdersController {
     public Iterable<StockOrder> findAll() {
         return service.getAllOrders();
     }
+
 }

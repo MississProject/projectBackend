@@ -7,7 +7,7 @@ CREATE TABLE stocks (stock_symbol varchar(50) primary key, stock_name varchar(50
 );
 
 CREATE TABLE stock_orders (order_id int primary key auto_increment,
-		            order_status varchar(50) not null,
+		            order_status int not null,
                     num_of_shares int,
                     stock_symbol varchar(50),
                     user_email varchar(50),
@@ -28,7 +28,7 @@ insert into stocks values ('MSFT', 'microsoft', 157.14);
 
 
 
-insert into stock_orders values (1, 'initial state', 1, 'AAPL', 'abc@gmail.com');
-insert into stock_orders values (2, 'processing', 3, 'AAPL', 'abc@gmail.com');
-insert into stock_orders values (3, 'success', 2, 'AAPL', 'abc@gmail.com');
-insert into stock_orders values (4, 'success', 1, 'MSFT', 'abc@gmail.com');
+insert into stock_orders values (1, 0, 1, 'AAPL', 'abc@gmail.com');
+insert into stock_orders values (2, 0, 3, 'AAPL', 'abc@gmail.com');
+insert into stock_orders values (3, 1, 2, 'AAPL', 'abc@gmail.com');
+insert into stock_orders values (4, 1, 1, 'MSFT', 'abc@gmail.com');
