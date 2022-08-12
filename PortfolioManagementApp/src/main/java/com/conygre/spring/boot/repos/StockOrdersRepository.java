@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StockOrdersRepository extends JpaRepository<StockOrder, Integer> {
-    // add an order
     // get all orders
+    // add an order
     // delete order by id
     // delete all orders
     // get order by stock symbol
